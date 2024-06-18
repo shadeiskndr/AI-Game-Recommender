@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="p-10 pb-0 flex flex-col items-center top-0 z-50">
       <div className="text-center mb-10">
-        <h1 className="text-5xl font-bold">Catalogd AI Game Recommender</h1>
+        <h1 className="text-5xl font-bold">AI Game Recommender</h1>
         <p className="text-xl mt-2">Over 1500 video game titles recognized by AI for vector search.</p>
         <p className="text-md mt-1">
           Powered by{" "}

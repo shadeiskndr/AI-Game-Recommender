@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Catalogd AI Game Recommender",
+  title: "AI Game Recommender",
   description: "An video game recommender app built with machine learning and artificial intelligence.",
 };
 

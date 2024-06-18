@@ -1,4 +1,4 @@
-## Catalogd AI Game Recommender
+## AI Game Recommender
 
 A video game recommender web application using using AI through vector embeddings. A separate feature of Catalogd-FYP.
 
