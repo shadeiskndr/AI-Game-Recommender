@@ -52,25 +52,29 @@ async function GamePage({
           <h1 className="text-6xl font-bold">{game.name}</h1>
           <p className="text-gray-900">{game.genres}</p>
           <p className="font-light">
-    {game.$vectorize
-      .replace(/<br \/>/g, "")
-      .replace(/<br\/>/g, "")
-      .replace(/<li>/g, "")
-      .replace(/<\/li>/g, "")
-      .replace(/<\/strong>/g, "")
-      .replace(/<strong>/g, "")
-      .replace(/<\/ul>/g, "")
-      .replace(/<ul>/g, "")
-      .replace(/<\/p>/g, "")
-      .replace(/<p>/g, "")
-      .replace(/�/g, " ")
-      .replace(/&quot;/g, "'")
-      .replace(/&#39;/g, "'")
-      .replace(/&amp;/g, ",")
-      .replace(/<h3>/g, "")
-      .replace(/<\/h3>/g, "")
-      .replace(/�/g, "")}
-  </p>
+  {game.$vectorize
+    ? game.$vectorize
+        .replace(/<br \/>/g, "")
+        .replace(/<br\/>/g, "")
+        .replace(/<li>/g, "")
+        .replace(/<\/li>/g, "")
+        .replace(/<\/strong>/g, "")
+        .replace(/<strong>/g, "")
+        .replace(/<\/ul>/g, "")
+        .replace(/<ul>/g, "")
+        .replace(/<\/p>/g, "")
+        .replace(/<p>/g, "")
+        .replace(/�/g, " ")
+        .replace(/&quot;/g, "'")
+        .replace(/&#39;/g, "'")
+        .replace(/&amp;/g, ",")
+        .replace(/<h3>/g, "")
+        .replace(/<\/h3>/g, "")
+        .replace(/�/g, "")
+    : "No description data available, error on DataStax side. Sorry!"}
+</p>
+
+
 
           <div className="mt-auto grid grid-cols-2">
             <div className="font-semibold">
@@ -96,14 +100,14 @@ async function GamePage({
           Similar video games you may like
         </h2>
         <div className="flex justify-between items-center lg:flex-row gap-x-20 gap-y-10 pl-20 pr-10 py-10 overflow-x-scroll">
-          {similarGames.map((game, i) => (
-            <GamePoster
-              key={game._id}
-              index={i + 1}
-              similarityRating={Number(game.$similarity.toFixed(2)) * 100}
-              game={game}
-            />
-          ))}
+        {similarGames.map((game, i) => (
+  <GamePoster
+    key={game._id}
+    index={i + 1}
+    similarityRating={Number((game.$similarity || 0).toFixed(2)) * 100}
+    game={game}
+  />
+))}
         </div>
       </div>
     </div>

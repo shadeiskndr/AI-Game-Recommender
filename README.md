@@ -2,7 +2,7 @@
   AI Game Recommender
 </h1>
 <p align="center">
-A video game recommender web application using using AI through vector embeddings. A separate feature of Catalogd-FYP.
+A video game recommender web application using AI through vector embeddings. A separate feature of Catalogd-FYP.
 
 Built with <a href="https://nextjs.org" target="_blank">Next.js</a>, <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>, <a href="https://react.dev/" target="_blank">React</a>, <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>, <a href="https://rawg.io/apidocs" target="_blank">RAWG API</a>, <a href="https://mistral.ai/" target="_blank">Mistral AI</a> and <a href="https://www.datastax.com/" target="_blank">DataStax Astra</a>. Deployed on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.⚡
 

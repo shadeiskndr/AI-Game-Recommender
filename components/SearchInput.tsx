@@ -27,14 +27,14 @@ function SearchInput() {
       <div className="mx-4"></div> {/* Add whitespace between Image and form */}
       <form
         action={searchAction}
-        className="flex-1 flex items-center px-5 rounded-full border-white bg-white border shadow-lg"
+        className="flex-1 flex items-center pl-5 rounded-full border-white border shadow-lg bg-white"
       >
         <Link href="/">
-          <HomeIcon className="h-10 w-10 text-gray-500 transition-transform duration-200 ease-in-out transform hover:scale-110" title="Go to Home"/>
+          <HomeIcon className="h-10 w-10 text-gray-400 transition-transform duration-200 ease-in-out transform hover:scale-110 mr-3" title="Go to Home"/>
         </Link>
         <input
           type="text"
-          className="flex-1 p-5 focus:outline-none focus:bg-transparent"
+          className="flex-1 p-5 focus:outline-none focus:bg-transparent bg-transparent rounded-full"
           name="searchTerm"
           placeholder="Type any video game information or meaning (name, description, genre). | e.g. 'A game where you play as a thief'"
         />
@@ -44,4 +44,3 @@ function SearchInput() {
 }
 
 export default SearchInput;
-
