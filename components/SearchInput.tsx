@@ -15,16 +15,6 @@ function SearchInput() {
 
   return (
     <div className="flex items-center w-full">
-      <Link href="https://catalogd-fyp.vercel.app" title="Go back to Catalogd">
-        <Image
-          src={catalogdLogo}
-          alt="Catalogd Logo"
-          width={65}
-          height={65}
-          className="rounded-full transition-transform duration-200 ease-in-out transform hover:scale-110"
-        />
-      </Link>
-      <div className="mx-4"></div> {/* Add whitespace between Image and form */}
       <form
         action={searchAction}
         className="flex-1 flex items-center pl-5 rounded-full border-white border shadow-lg bg-white"

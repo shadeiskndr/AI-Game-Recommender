@@ -12,8 +12,8 @@ const ImageWithFallback = (props: {
 
   return (
     <Image
-      width={300}
-      height={450}
+      width={250}
+      height={200}
       {...props}
       src={imgSrc}
       onError={() => {

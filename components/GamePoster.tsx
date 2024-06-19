@@ -15,7 +15,7 @@ function GamePoster({
     <Link key={game._id} href={`/game/${game._id}`} className="">
       <div className="relative">
         <ImageWithFallback
-          className="min-w-96 max-w-96 h-64 object-cover rounded-lg shadow-lg transition-transform duration-200 ease-in-out transform hover:scale-105"
+          className="w-[30rem] h-64 object-cover rounded-lg shadow-lg transition-transform duration-200 ease-in-out transform hover:scale-105"
           src={game.background_image}
           alt={game.name}
         />

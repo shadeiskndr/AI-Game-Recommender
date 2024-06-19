@@ -45,7 +45,7 @@ async function GamePage({
           src={game.background_image}
           alt={game.name}
           width={400}
-          height={500}
+          height={400}
           className="shrink-0 rounded-lg "
         />
         <div className="px-2 md:px-10 flex flex-col gap-y-2">
