@@ -71,7 +71,7 @@ async function GamePage({
         .replace(/<h3>/g, "")
         .replace(/<\/h3>/g, "")
         .replace(/�/g, "")
-    : "No description data available, error on DataStax side. Sorry!"}
+    : "No description data available, error on DataStax side. Sorry! Though you can use the search to find similar video games."}
 </p>
 
 
