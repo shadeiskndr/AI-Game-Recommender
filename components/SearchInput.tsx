@@ -14,13 +14,13 @@ function SearchInput() {
   }
 
   return (
-    <div className="flex items-center w-full">
+    <div className="mr-5 flex items-center w-full">
       <form
         action={searchAction}
-        className="flex-1 flex items-center rounded-full border-white border shadow-lg bg-white"
+        className="flex-1 pl-2 flex items-center rounded-full border-white border shadow-lg bg-white"
       >
         <Link href="/">
-          <HomeIcon className="h-10 w-10 text-gray-400 transition-transform duration-200 ease-in-out transform hover:scale-110 mr-3" title="Go to Home"/>
+          <HomeIcon className="h-10 w-10 text-gray-400 transition-transform duration-200 ease-in-out transform hover:scale-110 ml-1 mr-1" title="Go to Home"/>
         </Link>
         <input
           type="text"
