@@ -52,29 +52,27 @@ async function GamePage({
           <h1 className="text-6xl font-bold">{game.name}</h1>
           <p className="text-gray-900">{game.genres}</p>
           <p className="font-light">
-  {game.$vectorize
-    ? game.$vectorize
-        .replace(/<br \/>/g, "")
-        .replace(/<br\/>/g, "")
-        .replace(/<li>/g, "")
-        .replace(/<\/li>/g, "")
-        .replace(/<\/strong>/g, "")
-        .replace(/<strong>/g, "")
-        .replace(/<\/ul>/g, "")
-        .replace(/<ul>/g, "")
-        .replace(/<\/p>/g, "")
-        .replace(/<p>/g, "")
-        .replace(/�/g, " ")
-        .replace(/&quot;/g, "'")
-        .replace(/&#39;/g, "'")
-        .replace(/&amp;/g, ",")
-        .replace(/<h3>/g, "")
-        .replace(/<\/h3>/g, "")
-        .replace(/�/g, "")
-    : "No description data available, error on DataStax side. Sorry! Though you can use the search to find similar video games."}
-</p>
-
-
+            {game.$vectorize
+              ? game.$vectorize
+                .replace(/<br \/>/g, "")
+                .replace(/<br\/>/g, "")
+                .replace(/<li>/g, "")
+                .replace(/<\/li>/g, "")
+                .replace(/<\/strong>/g, "")
+                .replace(/<strong>/g, "")
+                .replace(/<\/ul>/g, "")
+                .replace(/<ul>/g, "")
+                .replace(/<\/p>/g, "")
+                .replace(/<p>/g, "")
+                .replace(/�/g, " ")
+                .replace(/&quot;/g, "'")
+                .replace(/&#39;/g, "'")
+                .replace(/&amp;/g, ",")
+                .replace(/<h3>/g, "")
+                .replace(/<\/h3>/g, "")
+              : "No description data available and similarity rating section might not be working, error on the back-end side. Sorry! Though you can use the search to find similar video games."
+            }
+          </p>
 
           <div className="mt-auto grid grid-cols-2">
             <div className="font-semibold">
