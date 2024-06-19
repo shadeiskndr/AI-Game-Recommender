@@ -17,7 +17,7 @@ function SearchInput() {
     <div className="flex items-center w-full">
       <form
         action={searchAction}
-        className="flex-1 flex items-center pl-5 rounded-full border-white border shadow-lg bg-white"
+        className="flex-1 flex items-center rounded-full border-white border shadow-lg bg-white"
       >
         <Link href="/">
           <HomeIcon className="h-10 w-10 text-gray-400 transition-transform duration-200 ease-in-out transform hover:scale-110 mr-3" title="Go to Home"/>
