@@ -8,6 +8,7 @@ export type Game = {
   playtime: string;
   platforms: string;
   genres: string;
+  description: string;
   $vectorize: string;
   $vector: Array<number>;
 };

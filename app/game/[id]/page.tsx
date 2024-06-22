@@ -14,7 +14,7 @@ async function GamePage({
     id: string;
   };
 }) {
-  const games = db.collection("games");
+  const games = db.collection("psgames");
 
   const search = await games.find({ $and: [{ _id: id }] });
 
@@ -28,7 +28,7 @@ async function GamePage({
     .find(
       {},
       {
-        vector: game.$vector,
+        vectorize: game.description,
         limit: 6, // we will cut the first game and want to show 5 similar games
         includeSimilarity: true,
       }
@@ -44,7 +44,7 @@ async function GamePage({
         <Image
           src={game.background_image}
           alt={game.name}
-          width={400}
+          width={500}
           height={400}
           className="shrink-0 rounded-lg "
         />
@@ -52,8 +52,8 @@ async function GamePage({
           <h1 className="text-6xl font-bold">{game.name}</h1>
           <p className="text-gray-900">{game.genres}</p>
           <p className="font-light">
-            {game.$vectorize
-              ? game.$vectorize
+            {game.description
+              ? game.description
                 .replace(/<br \/>/g, "")
                 .replace(/<br\/>/g, "")
                 .replace(/<li>/g, "")

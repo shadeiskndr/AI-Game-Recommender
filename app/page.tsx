@@ -6,11 +6,16 @@ import { Game } from "@/types";
 export const revalidate = 60 * 60 * 24;
 
 export default async function Home() {
-  const games = db.collection("games");
+  const games = db.collection("psgames");
 
   const allGames = (await games
     .find(
-      {},
+      {
+        $or: [
+          { platforms: "PlayStation" },
+          { genres: "RPG" }
+        ]
+      },
       {
         limit: 15,
         // this is how you exclude out the vector fields from the results

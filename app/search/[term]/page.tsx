@@ -12,7 +12,7 @@ async function SearchTerm({
     term: string;
   };
 }) {
-  const games = db.collection("games");
+  const games = db.collection("psgames");
 
   const similarGames = (await games
     .find(

@@ -12,7 +12,7 @@ const ImageWithFallback = (props: {
 
   return (
     <Image
-      width={250}
+      width={300}
       height={200}
       {...props}
       src={imgSrc}
