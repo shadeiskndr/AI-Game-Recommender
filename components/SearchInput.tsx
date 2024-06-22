@@ -26,7 +26,7 @@ function SearchInput() {
           type="text"
           className="flex-1 p-5 focus:outline-none focus:bg-transparent bg-transparent rounded-full"
           name="searchTerm"
-          placeholder="Type any video game information or meaning (name, description, genre). | e.g. 'A game where you play as a thief'"
+          placeholder="Type any video game information or meaning (name, description, genre). | e.g. 'Assassin' or 'Apocalypse'"
         />
       </form>
     </div>
