@@ -6,7 +6,7 @@ import { Game } from "@/types";
 export const revalidate = 60 * 60 * 24;
 
 export default async function Home() {
-  const games = db.collection("psgames");
+  const games = db.collection("psgames2");
 
   const allGames = (await games
     .find(
@@ -17,7 +17,7 @@ export default async function Home() {
         ]
       },
       {
-        limit: 15,
+        limit: 9,
         // this is how you exclude out the vector fields from the results
         // projection: { $vector: 0 },
       }

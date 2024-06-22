@@ -14,7 +14,7 @@ async function GamePage({
     id: string;
   };
 }) {
-  const games = db.collection("psgames");
+  const games = db.collection("psgames2");
 
   const search = await games.find({ $and: [{ _id: id }] });
 
