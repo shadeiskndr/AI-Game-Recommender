@@ -2,25 +2,18 @@ import GamePoster from "@/components/GamePoster";
 import db from "@/db";
 import { Game } from "@/types";
 
-// refresh cache every 24 hours
 export const revalidate = 60 * 60 * 24;
 
-async function SearchTerm({
-  params: { term },
-}: {
-  params: {
-    term: string;
-  };
-}) {
-  const games = db.collection("psgames2");
+async function SearchTerm({ params }: { params: { term: string } }) {
+  const { term } = await params;
+  const games = db.collection("test_games");
 
   const similarGames = (await games
     .find(
       {},
       {
-        vectorize: term,
+        sort: { $vectorize: term },
         limit: 9,
-        // Do not include vectors in the output.
         projection: { $vector: 0 },
       }
     )

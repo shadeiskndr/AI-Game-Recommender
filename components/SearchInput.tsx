@@ -1,8 +1,6 @@
 import { HomeIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import Image from "next/image";
-import catalogdLogo from "../public/Catalogd red logo.jpeg";
 
 function SearchInput() {
   async function searchAction(formData: FormData) {
@@ -20,13 +18,16 @@ function SearchInput() {
         className="flex-1 pl-2 flex items-center rounded-full border-white border shadow-lg bg-white"
       >
         <Link href="/">
-          <HomeIcon className="h-10 w-10 text-gray-400 transition-transform duration-200 ease-in-out transform hover:scale-110 ml-1 mr-1" title="Go to Home"/>
+          <HomeIcon
+            className="h-10 w-10 text-gray-400 transition-transform duration-200 ease-in-out transform hover:scale-110 ml-1 mr-1"
+            title="Go to Home"
+          />
         </Link>
         <input
           type="text"
           className="flex-1 p-5 focus:outline-none focus:bg-transparent bg-transparent rounded-full"
           name="searchTerm"
-          placeholder="Type any video game information or meaning (name, description, genre). | e.g. 'Assassin' or 'Apocalypse'"
+          placeholder="Type any video game information or meaning (name, description, genre). | e.g. 'Football' or 'Robots'"
         />
       </form>
     </div>

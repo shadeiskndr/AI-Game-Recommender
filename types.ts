@@ -1,7 +1,9 @@
 export type Game = {
   _id: string;
+  id: string;
   name: string;
-  released: string;
+  datereleased: string;
+  yearreleased: string;
   background_image: string;
   rating: string;
   metacritic: string;
@@ -10,7 +12,7 @@ export type Game = {
   genres: string;
   description: string;
   $vectorize: string;
-  $vector: Array<number>;
+  $vector?: Array<number>;
 };
 
 export type SimilarGame = {
