@@ -5,9 +5,16 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 // refresh cache every 24 hours
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
-async function GamePage({ params }: { params: { id: string } }) {
+type GamePageProps = {
+  params: {
+    id: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+async function GamePage({ params }: GamePageProps) {
   const { id } = await params;
   const games = db.collection("test_games");
 

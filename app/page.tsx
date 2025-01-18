@@ -3,7 +3,7 @@ import db from "@/db";
 import { Game } from "@/types";
 
 // refresh cache every 24 hours
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
 export default async function Home() {
   const games = db.collection("test_games");

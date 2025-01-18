@@ -2,9 +2,16 @@ import GamePoster from "@/components/GamePoster";
 import db from "@/db";
 import { Game } from "@/types";
 
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
-async function SearchTerm({ params }: { params: { term: string } }) {
+type SearchTermProps = {
+  params: {
+    term: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+async function SearchTerm({ params }: SearchTermProps) {
   const { term } = await params;
   const games = db.collection("test_games");
 
