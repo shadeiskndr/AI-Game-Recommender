@@ -4,18 +4,25 @@ import { Game, SimilarGame } from "@/types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// refresh cache every 24 hours
 export const revalidate = 86400;
 
 type GamePageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  }>;
+  searchParams?: Promise<{
+    [key: string]: string | string[] | undefined;
+  }>;
 };
 
-async function GamePage({ params }: GamePageProps) {
-  const { id } = await params;
+async function GamePage({
+  params: paramsPromise,
+  searchParams: searchParamsPromise,
+}: GamePageProps) {
+  const params = await paramsPromise;
+  const searchParams = await searchParamsPromise;
+  const { id } = params;
+
   const games = db.collection("test_games");
 
   const search = await games.find({ $and: [{ _id: id }] });

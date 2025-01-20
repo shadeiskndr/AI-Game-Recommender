@@ -5,14 +5,21 @@ import { Game } from "@/types";
 export const revalidate = 86400;
 
 type SearchTermProps = {
-  params: {
+  params: Promise<{
     term: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  }>;
+  searchParams?: Promise<{
+    [key: string]: string | string[] | undefined;
+  }>;
 };
 
-async function SearchTerm({ params }: SearchTermProps) {
-  const { term } = await params;
+async function SearchTerm({
+  params: paramsPromise,
+  searchParams: searchParamsPromise,
+}: SearchTermProps) {
+  const params = await paramsPromise;
+  const searchParams = await searchParamsPromise;
+  const { term } = params;
   const games = db.collection("test_games");
 
   const similarGames = (await games
@@ -29,7 +36,7 @@ async function SearchTerm({ params }: SearchTermProps) {
   return (
     <div className="flex flex-col items-center justify-center pb-24 pt-16 pl-10 pr-12">
       <h1 className="mb-10 text-xl text-white-500">
-        Suggested results based on your search
+        Suggested results based on your search: {decodeURIComponent(term)}
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
