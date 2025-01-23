@@ -1,0 +1,38 @@
+AI-Game-Recommender
+├─ .eslintrc.json
+├─ app
+│  ├─ favicon.ico
+│  ├─ game
+│  │  └─ [id]
+│  │     └─ page.tsx
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  └─ search
+│     ├─ loading.tsx
+│     └─ [term]
+│        └─ page.tsx
+├─ components
+│  ├─ GamePoster.tsx
+│  ├─ Header.tsx
+│  ├─ ImageWithFallback.tsx
+│  └─ SearchInput.tsx
+├─ db.ts
+├─ docs
+│  ├─ rules.md
+│  ├─ tailwindcss-v4.md
+│  └─ tree-structure.txt
+├─ images
+│  └─ placeholder.jpeg
+├─ LICENSE
+├─ next.config.mjs
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ Catalogd red logo.jpeg
+│  ├─ next.svg
+│  └─ vercel.svg
+├─ README.md
+├─ tsconfig.json
+└─ types.ts
