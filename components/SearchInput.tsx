@@ -109,6 +109,7 @@ function SearchInput() {
 
   useEffect(() => {
     setSuggestions(getRandomSuggestions());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSuggestionClick = (suggestion: string) => {

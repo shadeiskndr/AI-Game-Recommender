@@ -61,7 +61,7 @@ async function SearchTerm({
               </p>
               <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary-600/30 to-secondary-600/30 rounded-xl border border-primary-500/30">
                 <span className="text-xl font-semibold text-primary-300">
-                  "{decodedTerm}"
+                  &quot;{decodedTerm}&quot;
                 </span>
               </div>
               <p className="text-sm text-gray-400 mt-4">
@@ -168,8 +168,8 @@ async function SearchTerm({
                     Browse Featured Games
                   </a>
                   <div className="text-sm text-gray-400">
-                    or try searching for: "action adventure", "puzzle games",
-                    "multiplayer"
+                    or try searching for: &quot;action adventure&quot;,
+                    &quot;puzzle games&quot;, &quot;multiplayer&quot;
                   </div>
                 </div>
               </div>
@@ -192,7 +192,7 @@ async function SearchTerm({
                       </strong>
                       <br />
                       <span className="text-gray-400">
-                        "Open world RPG with magic system"
+                        &quot;Open world RPG with magic system&quot;
                       </span>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ async function SearchTerm({
                       </strong>
                       <br />
                       <span className="text-gray-400">
-                        "Battle royale", "Puzzle platformer"
+                        &quot;Battle royale&quot;, &quot;Puzzle platformer&quot;
                       </span>
                     </div>
                   </div>
@@ -218,7 +218,7 @@ async function SearchTerm({
                       </strong>
                       <br />
                       <span className="text-gray-400">
-                        "Cooperative multiplayer survival"
+                        &quot;Cooperative multiplayer survival&quot;
                       </span>
                     </div>
                   </div>
@@ -230,7 +230,7 @@ async function SearchTerm({
                       </strong>
                       <br />
                       <span className="text-gray-400">
-                        "Dark atmospheric horror game"
+                        &quot;Dark atmospheric horror game&quot;
                       </span>
                     </div>
                   </div>

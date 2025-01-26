@@ -23,6 +23,7 @@ const ImageWithFallback = (props: {
         height={props.height || 300}
         {...props}
         src={imgSrc}
+        alt={props.alt}
         onLoad={() => setIsLoading(false)}
         onError={() => {
           setImgSrc("/images/placeholder.jpeg");
