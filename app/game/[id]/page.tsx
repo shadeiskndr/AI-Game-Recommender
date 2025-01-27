@@ -10,6 +10,7 @@ import {
   ChartBarIcon,
   ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
+import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -76,19 +77,17 @@ async function GamePage({
         .replace(/<\/h3>/g, "")
     : "No description available. This might affect similarity ratings, but you can still use search to find similar games.";
 
+  // Function to get star color based on rating
+  const getStarColor = (rating: number) => {
+    if (rating >= 4.0) return "text-green-400"; // Excellent
+    if (rating >= 3.5) return "text-yellow-400"; // Very Good
+    if (rating >= 3.0) return "text-orange-400"; // Good
+    if (rating >= 2.5) return "text-red-400"; // Average
+    return "text-red-800"; // Below Average
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Back Navigation */}
-      <div className="px-8 pt-8">
-        <Link
-          href="/"
-          className="inline-flex items-center space-x-2 text-gray-300 hover:text-primary-300 transition-colors duration-200 group"
-        >
-          <ArrowLeftIcon className="h-5 w-5 group-hover:-translate-x-1 transition-transform duration-200" />
-          <span>Back to Games</span>
-        </Link>
-      </div>
-
       {/* Game Hero Section */}
       <div className="px-8 py-12">
         <div className="max-w-7xl mx-auto">
@@ -140,21 +139,21 @@ async function GamePage({
 
                 <div className="glass-effect rounded-xl p-4 space-y-3">
                   <div className="flex items-center space-x-3">
-                    <StarIcon className="h-5 w-5 text-accent-400" />
+                    <StarIcon className="h-5 w-5 text-secondary-400" />
                     <span className="text-gray-300 text-sm">User Rating</span>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex flex-col space-y-2">
                     <p className="text-white font-semibold">
                       {game.rating || "N/A"}/5
                     </p>
                     {game.rating && (
-                      <div className="flex space-x-1">
+                      <div className="flex flex-wrap gap-1">
                         {[...Array(5)].map((_, i) => (
-                          <StarIcon
+                          <StarIconSolid
                             key={i}
                             className={`h-4 w-4 ${
                               i < Math.floor(parseFloat(game.rating))
-                                ? "text-accent-400 fill-current"
+                                ? getStarColor(parseFloat(game.rating))
                                 : "text-gray-600"
                             }`}
                           />
@@ -236,13 +235,13 @@ async function GamePage({
             {/* Horizontal Scrolling Container */}
             <div className="relative">
               {/* Scroll Indicators */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-dark-900 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-dark-900 to-transparent z-10 pointer-events-nonel"></div>
               <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-dark-900 to-transparent z-10 pointer-events-none"></div>
 
               {/* Scrollable Games Container */}
               <div className="horizontal-scroll overflow-x-auto pb-4">
                 <div
-                  className="flex space-x-6 px-4"
+                  className="flex space-x-6 px-4 py-4"
                   style={{ width: "max-content" }}
                 >
                   {similarGames.map((similarGame, index) => (

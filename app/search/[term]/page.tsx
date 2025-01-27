@@ -41,17 +41,17 @@ async function SearchTerm({
 
   return (
     <div className="min-h-screen">
-      <div className="px-4 sm:px-6 lg:px-8 py-12">
+      <div className="px-4 sm:px-6 lg:px-8 py-10">
         <div className="max-w-7xl mx-auto">
           {/* Search Results Header */}
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center mb-6">
+            <div className="flex items-center justify-center mb-4">
               <div className="p-4 bg-primary-600/20 rounded-full">
                 <MagnifyingGlassIcon className="h-8 w-8 text-primary-400" />
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Search Results
             </h1>
 
@@ -92,36 +92,6 @@ async function SearchTerm({
                 {similarGames.map((game, index) => (
                   <div key={game._id} className="relative group">
                     <GamePoster game={game} index={index + 1} />
-
-                    {/* Top 3 Results Badge */}
-                    {index < 3 && (
-                      <div className="absolute -top-2 -left-2 z-10">
-                        <div
-                          className={`text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg transform group-hover:scale-110 transition-transform duration-200 ${
-                            index === 0
-                              ? "bg-gradient-to-r from-yellow-500 to-yellow-600"
-                              : index === 1
-                              ? "bg-gradient-to-r from-gray-400 to-gray-500"
-                              : "bg-gradient-to-r from-amber-600 to-amber-700"
-                          }`}
-                        >
-                          {index === 0
-                            ? "🥇 BEST"
-                            : index === 1
-                            ? "🥈 GREAT"
-                            : "🥉 GOOD"}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Rank Number for Mobile */}
-                    <div className="absolute top-2 right-2 sm:hidden">
-                      <div className="w-8 h-8 bg-dark-900/80 backdrop-blur-sm rounded-full flex items-center justify-center border border-primary-500/30">
-                        <span className="text-primary-300 font-bold text-sm">
-                          #{index + 1}
-                        </span>
-                      </div>
-                    </div>
                   </div>
                 ))}
               </div>

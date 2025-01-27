@@ -1,6 +1,7 @@
 import GamePoster from "@/components/GamePoster";
 import db from "@/lib/db";
 import { Game } from "@/lib/types";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 // refresh cache every 24 hours
 export const revalidate = 86400;
@@ -11,7 +12,11 @@ export default async function Home() {
   const allGames = (await games
     .find(
       {
-        $or: [{ platforms: "PlayStation" }, { genres: "Action, Adventure" }],
+        $or: [
+          { platforms: "PlayStation" },
+          { genres: "Action, Adventure" },
+          { genres: "RPG" },
+        ],
       },
       {
         limit: 9,
@@ -22,7 +27,7 @@ export default async function Home() {
     .toArray()) as Game[];
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen">
       {/* Featured Games Section */}
       <div className="px-8 py-12">
         <div className="max-w-7xl mx-auto">
@@ -33,7 +38,7 @@ export default async function Home() {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Discover popular action and adventure games, handpicked for you
+              Discover video games, handpicked for you
             </p>
           </div>
 
@@ -42,15 +47,6 @@ export default async function Home() {
             {allGames.map((game, index) => (
               <div key={game._id} className="relative">
                 <GamePoster game={game} />
-
-                {/* Featured Badge for first 3 games */}
-                {index < 3 && (
-                  <div className="absolute -top-2 -right-2 z-10">
-                    <div className="bg-gradient-to-r from-accent-500 to-accent-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                      FEATURED
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -61,14 +57,14 @@ export default async function Home() {
               <h3 className="text-2xl font-bold text-white mb-4">
                 Looking for something specific?
               </h3>
-              <p className="text-dark-300 mb-6">
+              <p className="text-gray-300 mb-6">
                 Use our AI-powered search to find games that match your exact
                 preferences
               </p>
               <div className="flex justify-center">
-                <div className="px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl text-white font-medium">
+                <ScrollToTopButton className="px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl text-white font-medium hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 cursor-pointer">
                   Try searching above ↑
-                </div>
+                </ScrollToTopButton>
               </div>
             </div>
           </div>
