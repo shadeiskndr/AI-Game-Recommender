@@ -26,7 +26,7 @@ async function SearchTerm({
   const { term } = params;
   const decodedTerm = decodeURIComponent(term);
 
-  const games = db.collection("test_games");
+  const games = db.collection("games");
 
   const similarGames = (await games
     .find(

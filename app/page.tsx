@@ -7,19 +7,22 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 export const revalidate = 86400;
 
 export default async function Home() {
-  const games = db.collection("test_games");
+  const games = db.collection("games");
 
   const allGames = (await games
     .find(
       {
-        $or: [
-          { platforms: "PlayStation" },
-          { genres: "Action, Adventure" },
-          { genres: "RPG" },
+        $and: [
+          { genres: { $in: ["Action, Adventure", "Racing"] } },
+          {
+            platforms: {
+              $in: ["PlayStation 5", "PC, PlayStation 5"],
+            },
+          },
         ],
       },
       {
-        limit: 9,
+        limit: 12,
         // this is how you exclude out the vector fields from the results
         // projection: { $vector: 0 },
       }
