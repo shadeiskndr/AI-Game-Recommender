@@ -22,8 +22,8 @@ function Header() {
             Discover your next favorite game with AI-powered recommendations
           </p>
           <p className="text-sm sm:text-base md:text-lg text-gray-400">
-            Over 3,000 video game titles recognized by AI for intelligent vector
-            search
+            Over 20,000 video game titles recognized by AI for intelligent
+            vector search
           </p>
         </div>
 

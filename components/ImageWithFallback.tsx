@@ -26,7 +26,7 @@ const ImageWithFallback = (props: {
         alt={props.alt}
         onLoad={() => setIsLoading(false)}
         onError={() => {
-          setImgSrc("/images/placeholder.jpeg");
+          setImgSrc("/placeholder.jpeg");
           setIsLoading(false);
         }}
         className={`${props.className} transition-opacity duration-300 ${

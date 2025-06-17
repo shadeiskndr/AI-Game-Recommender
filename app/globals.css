@@ -244,3 +244,30 @@ body {
     display: none !important; /* Hides elements with .no-print class when printing */
   }
 }
+
+/* Custom scrollbar for tags section */
+.tags-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tags-scroll::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 2px;
+}
+
+.tags-scroll::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 2px;
+}
+
+.tags-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
+
+/* Enhanced glass effect for new sections */
+.glass-effect-enhanced {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
