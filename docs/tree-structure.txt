@@ -13,17 +13,24 @@ AI-Game-Recommender
 │     └─ [term]
 │        └─ page.tsx
 ├─ components
+│  ├─ Footer.tsx
+│  ├─ GameDescription.tsx
 │  ├─ GamePoster.tsx
 │  ├─ Header.tsx
 │  ├─ ImageWithFallback.tsx
-│  └─ SearchInput.tsx
-├─ db.ts
+│  ├─ ScrollToTopButton.tsx
+│  ├─ SearchInput.tsx
+│  ├─ TagsSection.tsx
+│  └─ ui
+│     └─ collapsible.tsx
 ├─ docs
 │  ├─ rules.md
 │  ├─ tailwindcss-v4.md
 │  └─ tree-structure.txt
-├─ images
-│  └─ placeholder.jpeg
+├─ lib
+│  ├─ actions.ts
+│  ├─ db.ts
+│  └─ types.ts
 ├─ LICENSE
 ├─ next.config.mjs
 ├─ package-lock.json
@@ -31,8 +38,6 @@ AI-Game-Recommender
 ├─ postcss.config.mjs
 ├─ public
 │  ├─ Catalogd red logo.jpeg
-│  ├─ next.svg
-│  └─ vercel.svg
+│  └─ placeholder.jpeg
 ├─ README.md
-├─ tsconfig.json
-└─ types.ts
+└─ tsconfig.json

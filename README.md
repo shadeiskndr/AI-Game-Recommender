@@ -90,26 +90,6 @@ npm run dev
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📁 Project Structure
-
-```
-AI-Game-Recommender/
-├── app/                    # Next.js App Router
-│   ├── game/[id]/         # Individual game pages
-│   ├── search/[term]/     # Search results pages
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx          # Home page
-│   └── globals.css       # Tailwind CSS imports & config
-├── components/            # Reusable React components
-│   ├── GamePoster.tsx    # Game display component
-│   ├── Header.tsx        # Navigation header
-│   ├── ImageWithFallback.tsx
-│   └── SearchInput.tsx   # Search functionality
-├── db.ts                 # Database connection & queries
-├── types.ts              # TypeScript type definitions
-└── public/               # Static assets
-```
-
 ## 🎯 How It Works
 
 1. **Data Ingestion**: Game data from RAWG API is processed and stored in Astra DB

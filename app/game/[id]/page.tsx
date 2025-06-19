@@ -12,8 +12,6 @@ import {
   ChartBarIcon,
   TagIcon,
   BookOpenIcon,
-  BuildingOfficeIcon,
-  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
 import { notFound } from "next/navigation";
@@ -27,6 +25,14 @@ type GamePageProps = {
 };
 
 async function GamePage({ params: paramsPromise }: GamePageProps) {
+  const buildVectorText = (g: Game): string => {
+    if (g.description) return g.description;
+
+    return [g.name, g.genres, g.tags, g.developers, g.publishers]
+      .filter(Boolean)
+      .join(" ");
+  };
+
   const params = await paramsPromise;
   const { id } = params;
 
@@ -40,11 +46,13 @@ async function GamePage({ params: paramsPromise }: GamePageProps) {
 
   const game = (await search.next()) as Game;
 
+  const vectorText = buildVectorText(game);
+
   const similarGames = (await games
     .find(
       {},
       {
-        sort: { $vectorize: game.description },
+        sort: { $vectorize: vectorText },
         limit: 7,
         includeSimilarity: true,
       }

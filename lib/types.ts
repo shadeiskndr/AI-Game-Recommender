@@ -13,7 +13,7 @@ export type Game = {
   developers: string;
   publishers: string;
   genres: string;
-  description: string;
+  description: string | null;
   $vectorize: string;
   $vector?: Array<number>;
 };
