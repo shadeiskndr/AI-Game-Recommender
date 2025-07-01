@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://ai-game-recommender.netlify.app"
+  to = "https://ai-game-recommender.shahathir.me"
+  status = 301
+  force = true
